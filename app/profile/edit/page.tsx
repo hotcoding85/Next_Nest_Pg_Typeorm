@@ -27,7 +27,7 @@ export default function EditProfilePage() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await fetch('http://172.16.3.88:5000/profiles/1')
+        const res = await fetch('http://localhost:5000/profiles/1')
         if (!res.ok) throw new Error('Failed to fetch profile')
         const data = await res.json()
         setProfile(data)
@@ -46,7 +46,7 @@ export default function EditProfilePage() {
 
     setIsLoading(true)
     try {
-      const res = await fetch(`http://172.16.3.88:5000/profiles/${profile.id}`, {
+      const res = await fetch(`http://localhost:5000/profiles/${profile.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

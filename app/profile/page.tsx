@@ -7,7 +7,7 @@ import Image from "next/image"
 import { BusinessProfile } from "@/types/profile"
 
 async function getProfile(id: number): Promise<BusinessProfile> {
-    const res = await fetch(`http://172.16.3.88:5000/profiles/${id}`, { cache: 'no-store' });
+    const res = await fetch(`http://localhost:5000/profiles/${id}`, { cache: 'no-store' });
     if (!res.ok) throw new Error('Failed to fetch profile');
     return res.json();
 }
